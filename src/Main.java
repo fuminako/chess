@@ -1,5 +1,40 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
+
+    private static final List<Task> tasks = new ArrayList<>();
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        addTask();
+
+
     }
+
+    public static void addTask(){
+        for (int value1 = 2; value1 <= 9; value1++) {
+            for (int value2 = value1; value2 <= 9; value2++) {
+                tasks.add(new Task(value1, value2));
+            }
+        }
+        Collections.shuffle(tasks);
+        List<Task> chosenPairs = tasks.subList(0, 15);
+        System.out.println(chosenPairs);
+    }
+
+//    static void example() {
+//        List<List<String>> biDemArrList = new ArrayList<>();
+//        for (int i = 0; i < 8; i++) {
+//            biDemArrList.add(i, new ArrayList<>());
+//            for (int j = 0; j < 8; j++) {
+//                biDemArrList.get(i).add(j, (i + j) % 2 == 1 ? "◯" : "●");
+//            }
+//        }
+//        for (int i = 0; i < 8; i++) {
+//            for (int j = 0; j < 8; j++) {
+//                System.out.print(biDemArrList.get(i).get(j) + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 }
