@@ -1,6 +1,7 @@
 package passport;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Passport {
     private final int number;
@@ -40,5 +41,18 @@ public class Passport {
 
     public LocalDate getLocalDate() {
         return localDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Passport passport = (Passport) o;
+        return number == passport.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
     }
 }
